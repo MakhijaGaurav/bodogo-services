@@ -23,14 +23,21 @@ public class ProductCategory {
     private String name;
 
     @CreationTimestamp
-    @Column(nullable = false,columnDefinition = "timestamp default CURRENT_TIMESTAMP")
+    @Column(nullable = false,columnDefinition = "timestamp with time zone default CURRENT_TIMESTAMP")
     private Date createdAt = new Date();
 
     @UpdateTimestamp
-    @Column(nullable = false,columnDefinition = "timestamp default CURRENT_TIMESTAMP")
+    @Column(nullable = false,columnDefinition = "timestamp with time zone default CURRENT_TIMESTAMP")
     private Date updatedAt = new Date();
 
     @Column(nullable = false,columnDefinition = "int default 0")
+    private int createdBy;
+
+    @Column(nullable = false,columnDefinition = "int default 0")
+    private int updatedBy;
+
+    @Column(nullable = false,columnDefinition = "int default 0")
     private int deleted=0;
+
 
 }
