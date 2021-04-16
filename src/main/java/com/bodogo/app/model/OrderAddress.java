@@ -20,9 +20,10 @@ public class OrderAddress {
     @GeneratedValue
     private int id;
 
+    @OneToOne
     @JsonProperty("order_id")
-    @Column(nullable = false,name="order_id")
-    private int orderID;
+    @JoinColumn(nullable = false,name="order_id")
+    private Order order;
 
     private String type;
 

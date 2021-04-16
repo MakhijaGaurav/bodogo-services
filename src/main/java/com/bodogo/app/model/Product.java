@@ -22,8 +22,10 @@ public class Product {
     @GeneratedValue
     private int id;
 
+    @ManyToOne
+    @JoinColumn(name = "sub_category",nullable = false)
     @JsonProperty("sub_category")
-    private int subCategory;
+    private ProductSubCategory productSubCategory;
 
     private String name;
 
