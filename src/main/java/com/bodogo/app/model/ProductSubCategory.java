@@ -1,6 +1,5 @@
 package com.bodogo.app.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,10 +20,7 @@ public class ProductSubCategory {
     @GeneratedValue
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "category",nullable = false)
-    @JsonProperty("product_category")
-    private ProductCategory productCategory;
+    private int category;
 
     private String name;
 

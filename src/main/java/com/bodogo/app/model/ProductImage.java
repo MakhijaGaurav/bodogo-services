@@ -20,10 +20,9 @@ public class ProductImage {
     @GeneratedValue
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name="product",nullable = false)
     @JsonProperty("product_id")
-    private Product product;
+    @Column(nullable = false,name = "product")
+    private int productID;
 
     @JsonProperty("image_no")
     @Column(nullable = false,name = "number")
@@ -49,6 +48,8 @@ public class ProductImage {
 
     @Column(nullable = false,columnDefinition = "int default 0")
     private int deleted=0;
+
+
 
 
 }
